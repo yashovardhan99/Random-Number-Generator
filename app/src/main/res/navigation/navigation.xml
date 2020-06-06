@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation.xml"
+    app:startDestination="@id/selectFragment">
+
+    <fragment
+        android:id="@+id/selectFragment"
+        android:name="com.yashovardhan99.rangen.SelectFragment"
+        android:label="fragment_select"
+        tools:layout="@layout/fragment_select">
+        <action
+            android:id="@+id/action_selectFragment_to_selectFragment2"
+            app:destination="@id/selectFragment2" />
+        <action
+            android:id="@+id/action_selectFragment_to_rollDiceFragment"
+            app:destination="@id/rollDiceFragment" />
+        <action
+            android:id="@+id/action_selectFragment_to_roll2DiceFragment"
+            app:destination="@id/roll2DiceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectFragment2"
+        android:name="com.yashovardhan99.rangen.SelectFragment2"
+        android:label="SelectFragment2"
+        tools:layout="@layout/fragment_select_two">
+        <action
+            android:id="@+id/action_selectFragment2_to_rollDiceFragment"
+            app:destination="@id/rollDiceFragment" />
+        <action
+            android:id="@+id/action_selectFragment2_to_roll2DiceFragment"
+            app:destination="@id/roll2DiceFragment" />
+        <action
+            android:id="@+id/action_selectFragment2_to_spinFragment2"
+            app:destination="@id/spinFragment">
+            <argument
+                android:name="start"
+                app:argType="integer" />
+            <argument
+                android:name="end"
+                app:argType="integer" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/rollDiceFragment"
+        android:name="com.yashovardhan99.rangen.RollDiceFragment"
+        android:label="RollDiceFragment"
+        tools:layout="@layout/fragment_dice_roller" />
+    <fragment
+        android:id="@+id/roll2DiceFragment"
+        android:name="com.yashovardhan99.rangen.Roll2DiceFragment"
+        android:label="Roll2DiceFragment"
+        tools:layout="@layout/fragment_roll_2_dice" />
+    <fragment
+        android:id="@+id/spinFragment"
+        android:name="com.yashovardhan99.rangen.SpinFragment"
+        android:label="SpinFragment">
+        <argument
+            android:name="start"
+            android:defaultValue="1"
+            app:argType="integer" />
+        <argument
+            android:name="end"
+            android:defaultValue="10"
+            app:argType="integer" />
+    </fragment>
+</navigation>

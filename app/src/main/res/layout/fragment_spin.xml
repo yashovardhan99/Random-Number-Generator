@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewmodel"
+            type="com.yashovardhan99.rangen.RollViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:onClick="@{v->viewmodel.spin()}">
+
+        <include
+            layout="@layout/back_button"
+            app:viewmodel="@{viewmodel}" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margintop"
+            android:alpha="0.6"
+            android:fontFamily="@font/roboto_light"
+            android:text="@string/you_spinned"
+            android:textAllCaps="true"
+            android:textColor="@android:color/white"
+            android:visibility="@{viewmodel.isSpinning?View.INVISIBLE:View.VISIBLE}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margintop"
+            android:alpha="0.6"
+            android:fontFamily="@font/roboto_light"
+            android:text="@string/tap_to_spin_again"
+            android:textAllCaps="true"
+            android:textColor="@android:color/white"
+            android:visibility="@{viewmodel.isSpinning?View.INVISIBLE:View.VISIBLE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@{viewmodel.currentRoll}"
+            android:textSize="96sp"
+            android:visibility="@{viewmodel.isSpinning?View.INVISIBLE:View.VISIBLE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="6" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_light"
+            android:text="@{viewmodel.rollText}"
+            android:textAllCaps="true"
+            android:textSize="24sp"
+            android:visibility="@{viewmodel.isSpinning?View.VISIBLE:View.INVISIBLE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

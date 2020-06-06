@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="startendmargin">30dp</dimen>
+    <dimen name="margintop">24dp</dimen>
+    <dimen name="cardcorner_radius">12dp</dimen>
+    <dimen name="cardmaintextsize">28sp</dimen>
+</resources>

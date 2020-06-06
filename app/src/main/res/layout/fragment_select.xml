@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.yashovardhan99.rangen.SelectViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".SelectFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/startendmargin"
+                android:layout_marginTop="@dimen/margintop"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/random_number"
+                android:textSize="36sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/startendmargin"
+                android:fontFamily="@font/roboto_light"
+                android:text="@string/generator"
+                android:textSize="28sp" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/single_die_card"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginStart="@dimen/startendmargin"
+                android:layout_marginTop="42dp"
+                android:layout_marginEnd="@dimen/startendmargin"
+                android:elevation="4dp"
+                android:onClick="@{v->viewmodel.goToSingleDie()}"
+                app:cardCornerRadius="@dimen/cardcorner_radius">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="3dp"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="@string/roll_a_die"
+                    android:textAllCaps="true"
+                    android:textSize="@dimen/cardmaintextsize" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:layout_marginBottom="22dp"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="@string/_1_6"
+                    android:textSize="12sp" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/two_dice_card"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginStart="@dimen/startendmargin"
+                android:layout_marginTop="@dimen/startendmargin"
+                android:layout_marginEnd="@dimen/startendmargin"
+                android:elevation="4dp"
+                android:onClick="@{v->viewmodel.goToDoubleDice()}"
+                app:cardCornerRadius="@dimen/cardcorner_radius">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="3dp"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="@string/roll_2_die"
+                    android:textAllCaps="true"
+                    android:textSize="@dimen/cardmaintextsize" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:layout_marginBottom="22dp"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="@string/_2_12"
+                    android:textSize="12sp" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/spin_wheel_card"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_margin="@dimen/startendmargin"
+                android:elevation="4dp"
+                android:onClick="@{v->viewmodel.goToSelectSpin()}"
+                app:cardCornerRadius="@dimen/cardcorner_radius">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="3dp"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="@string/spin_a_wheel"
+                    android:textAllCaps="true"
+                    android:textSize="@dimen/cardmaintextsize" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:layout_marginBottom="22dp"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="@string/select_a_range"
+                    android:textSize="12sp" />
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+    </ScrollView>
+</layout>
